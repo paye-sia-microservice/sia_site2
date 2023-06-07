@@ -1,24 +1,18 @@
 <?php
 
-namespace App\Models;
+    namespace App\Models;
+    use Illuminate\Database\Eloquent\Model;
 
-use App\Models\User;
+    class User extends Model{
+        protected $table = 'tbluser2';
+        protected $fillable = [
+            'username','password','gender','jobid'
+        ];
 
-use Illuminate\Database\Eloquent\Model;
+        public $timestamps = false;
+        protected $primaryKey = 'userid';
+        protected $hidden = [
+            'password',
+        ];
+    }
 
-
-class User extends Model {
-
-    public $timestamps = false;
-
-    protected $table = 'tbluser2';
-    protected $primaryKey = 'userid';
-
-    protected $fillable = [
-        'username', 'password', 'gender', 'jobid'
-    ];
-
-    protected $hidden =[
-        "password"
-    ];
-}
